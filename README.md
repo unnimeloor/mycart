@@ -1,6 +1,6 @@
 ## About Project
 
-MyCart is created to demonstrate working of an e-commerce plat form with limited features and backend functionality developed in Laravel 8.
+MyCart is created to demonstrate working of an e-commerce platform with limited features and backend functionality developed in Laravel 8.
 
 - Add Products from Backend.
 - Show available products in Frontend.
