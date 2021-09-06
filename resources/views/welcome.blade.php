@@ -130,18 +130,6 @@
                         </aside>
 
                         <div class="col-lg-9 col-md-8 col-sm-12 col-12">
-
-                            <div class="listingfilter_wrapper">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-12 col-12"></div>
-                                    <div class="col-lg-5 col-md-5 col-sm-12 col-12">
-                                        <!-- <input type="text" class="form-control" placeholder="Search ..." name="product_name"> -->
-                                    </div>
-                                    <div class="col-lg-1 col-md-1 col-sm-12 col-12">
-                                        <!-- <button type="submit" class="btn btn-danger">Search</button> -->
-                                    </div>
-                                </div>
-                            </div>
                             @if ($products->isNotEmpty())
                             @foreach ($products as $product)
                             <section class="list_view">
@@ -168,6 +156,8 @@
                             @else
                             No Products found
                             @endif
+
+                            {!! $products->links() !!}
                         </div>
                     </div>
                 </div>
