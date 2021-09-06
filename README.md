@@ -1,6 +1,6 @@
 ## About Project
 
-MyCart is created to demonstrate working of a e-commerce plat form with limited features with backend functionality developed in Laravel 8.
+MyCart is created to demonstrate working of an e-commerce plat form with limited features and backend functionality developed in Laravel 8.
 
 - Add Products from Backend.
 - Show available products in Frontend.
@@ -25,4 +25,4 @@ $ php artisan migrate:refresh --seed
 ## Admin Login details
 
 - Email: admin@admin.com
-- Password: password
+- Password: _password_
