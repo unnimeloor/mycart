@@ -21,15 +21,24 @@ class ProductController extends Controller
         $this->db = $db;
     }
 
+    /**
+     * List for Products
+     *
+     * @return Produt
+     */
     public function list()
     {
         $products = $this->productRepository->getProductList();
-        
+
         return view('admin.product.list', [
             'products' => $products,
         ]);
     }
 
+    /**
+     * Show create page
+     *
+     */
     public function create()
     {
         $brands = $this->productRepository->getBrands();
@@ -42,6 +51,11 @@ class ProductController extends Controller
         ]);
     }
 
+    /**
+     * Save Product
+     *
+     * @param Request $request
+     */
     public function save(Request $request)
     {
 
@@ -93,6 +107,11 @@ class ProductController extends Controller
         return redirect('admin/product');
     }
 
+    /**
+     * Edit page for Product
+     *
+     * @param integer $idProduct
+     */
     public function edit($idProduct)
     {
         $product = $this->productRepository->findProduct($idProduct);
@@ -107,6 +126,11 @@ class ProductController extends Controller
         ]);
     }
 
+    /**
+     * Update Product
+     *
+     * @param Request $request
+     */
     public function update(Request $request)
     {
         $request->validate([
@@ -156,6 +180,11 @@ class ProductController extends Controller
         return redirect('admin/product');
     }
 
+    /**
+     * Soft delete product
+     *
+     * @param integer $idProduct
+     */
     public function delete($idProduct)
     {
         $this->db->beginTransaction();

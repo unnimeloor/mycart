@@ -21,6 +21,11 @@ class ProductController extends Controller
         $this->product = $product;
     }
 
+    /**
+     * List all Products in frontend
+     *
+     * @param Request $request
+     */
     public function productList(Request $request)
     {
         $searchItems = $request->except('page');

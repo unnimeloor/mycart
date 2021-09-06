@@ -22,6 +22,11 @@ class ProductRepository
         $this->product = $product;
     }
 
+    /**
+     * Get Product List
+     *
+     * @return Product
+     */
     public function getProductList()
     {
         return $this->product
@@ -35,26 +40,55 @@ class ProductRepository
             ->paginate(50);
     }
 
+    /**
+     * Get Brands
+     *
+     * @return Brand
+     */
     public function getBrands()
     {
         return $this->brand->get();
     }
 
+    /**
+     * Get Processor Type
+     *
+     * @return ProcessorType
+     */
     public function getProcessorType()
     {
         return $this->processorType->get();
     }
 
+    /**
+     * Create Product
+     *
+     * @param array $data
+     * @return Product
+     */
     public function createProduct(array $data)
     {
         return $this->product->create($data);
     }
 
+    /**
+     * Find Product
+     *
+     * @param integer $idProduct
+     * @return Product
+     */
     public function findProduct(int $idProduct)
     {
         return $this->product->find($idProduct);
     }
 
+    /**
+     * Update Product
+     *
+     * @param integer $idProduct
+     * @param array $data
+     * @return boolean
+     */
     public function updateProduct(int $idProduct, array $data)
     {
         return $this->product
@@ -62,12 +96,24 @@ class ProductRepository
             ->update($data);
     }
 
+    /**
+     * Delete Product
+     *
+     * @param integer $idProduct
+     * @return void
+     */
     public function deleteProduct(int $idProduct)
     {
         return  $this->product->find($idProduct)->delete();
     }
 
-    public function getAllProducts($searchItems)
+    /**
+     * Get all Products for frontend listing
+     *
+     * @param array $searchItems
+     * @return array
+     */
+    public function getAllProducts(array $searchItems)
     {
         $queryData = $this->applyFilter($searchItems);
         $result = $queryData['query']->paginate(50);
@@ -82,6 +128,12 @@ class ProductRepository
         ];
     }
 
+    /**
+     * Apply query filter
+     *
+     * @param array $searchItems
+     * @return array
+     */
     private function applyFilter($searchItems)
     {
         $filters = [];
